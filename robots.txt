@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://grandpajackai.github.io/stuart-dansby/sitemap.xml
