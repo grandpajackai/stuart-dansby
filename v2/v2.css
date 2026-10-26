@@ -254,3 +254,8 @@ figure{margin:0}section[id]{scroll-margin-top:72px}
 .photo figcaption{font-size:.76rem}
 .hero-meta{font-size:.95rem;color:#CFC9C0}
 @media (max-width:860px){.hero::before{background:linear-gradient(0deg,var(--ink) 12%,rgba(14,14,14,.86) 48%,rgba(14,14,14,.15) 100%)}.nav a.btn{padding:1rem 1.25rem;justify-content:center}}
+/* review pass 2 */
+.reel img{opacity:.9}.reel:hover img{opacity:1}
+.reel::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(14,14,14,.7),transparent 40%);pointer-events:none}
+.reel .play{justify-items:end;padding-right:12%}.reel .lbl{z-index:1}
+@media (max-width:600px){.reel .play{padding-right:8%}}

@@ -42,7 +42,7 @@ PILLARS=[("Perspective","“The difference between stress and challenge is persp
 def pillars_html():
     return '<div class="pillars">'+''.join(f'<div class="pillar rv"><span class="n" aria-hidden="true">0{i+1}</span><div><h3>{t}</h3><p class="tool"><b>The tool:</b> {tool}</p></div><blockquote>{q}</blockquote></div>' for i,(t,q,tool) in enumerate(PILLARS))+'</div>'
 def reel(p):
-    return f'<a class="reel rv" href="https://www.youtube.com/watch?v=5sc7bOOXswY" data-video="5sc7bOOXswY" target="_blank" rel="noopener" aria-label="Play Stuart Warren Dansby speaker reel (opens video)">{img(p,"keynote","",sizes="(max-width:860px) 100vw, 1240px",pos="50% 45%")}<span class="play" aria-hidden="true"><i></i></span><span class="lbl">Speaker reel · Watch Stuart on stage</span></a>'
+    return f'<a class="reel rv" href="https://www.youtube.com/watch?v=5sc7bOOXswY" data-video="5sc7bOOXswY" target="_blank" rel="noopener" aria-label="Play Stuart Warren Dansby speaker reel (opens video)">{img(p,"reel","Stuart Warren Dansby speaking on stage with a microphone",sizes="(max-width:860px) 100vw, 1240px",pos="50% 35%")}<span class="play" aria-hidden="true"><i></i></span><span class="lbl">Speaker reel · Watch Stuart on stage</span></a>'
 def field(id,label,typ='text',req=True,full=False,opts=None,auto='',ph=''):
     r=' required aria-required="true"' if req else ''
     o='' if req else ' <span class="opt">(optional)</span>'
@@ -91,7 +91,7 @@ corp=head(p,'Stuart Warren Dansby | Corporate Keynotes &amp; Workshops | Taking 
 <section class="sec cream" id="credibility"><div class="wrap">
 <div class="split"><div class="rv"><span class="eyebrow">Credibility</span><h2>Tested where payroll is real.</h2><p class="lede">Stuart’s defining strength is developing people, then building the process and execution around them. That’s why Taking the Fight starts with people: sustainable performance does too.</p>
 <p>John Albert started as a young gym-membership salesperson who struggled to sell. Under Stuart’s coaching he became owner and CEO of a company generating roughly $85M and growing.</p></div>
-<figure class="photo tall rv">{img(p,"stage","Stuart Warren Dansby speaking on stage in front of the Taking the Fight logo",pos="50% 20%")}<figcaption>On stage · Taking the Fight</figcaption></figure></div>
+<figure class="photo tall rv">{img(p,"media","Stuart Warren Dansby in the NBC 6 News studio with his championship belt",pos="50% 50%")}<figcaption>In the studio · NBC 6 News</figcaption></figure></div>
 <div class="stats rv"><div class="stat"><b>5×+</b><span>Revenue growth helping build a multi-club fitness business</span><small>World Gym</small></div>
 <div class="stat"><b>1 → 5</b><span>Offices, with annual revenue grown from ~$2.5M to $9.5M by 2007</span><small>Mortgage &amp; real estate finance</small></div>
 <div class="stat"><b>$75M</b><span>Trade investment governed; a 12-person team supporting ~$120M revenue</span><small>BSN / Glanbia</small></div>
@@ -232,8 +232,8 @@ course=head(p,'The Five Pillars of Taking the Fight | Online Course | Stuart War
 <div class="week rv"><b>Week 5</b><h3>Championship</h3><p>The Daily Fight Card all week, then graduation</p></div>
 </div></div></section>
 
-<section class="sec char"><div class="wrap"><div class="split"><figure class="photo tall rv">{img(p,"ring","Stuart Warren Dansby in the ring during a fight",pos="50% 40%")}<figcaption>Started at 48 · Champion at 62</figcaption></figure>
-<div class="rv"><span class="eyebrow">Your instructor</span><h2>Stuart Warren Dansby</h2><p class="lede">Thirty years building and contributing to businesses as a commercial growth executive. A seven-year fighting career, a championship at 62 against a 32-year-old, and induction into the MMAM Hall of Fame in 2025.</p><p>Co-executive producer of the award-winning documentary <em>Taking the Fight</em>, selected by 26 festivals with 30+ awards.</p><p class="muted">“I am simply the conduit to deliver the message.”</p></div></div></div></section>
+<section class="sec char"><div class="wrap"><div class="split"><figure class="photo tall rv">{img(p,"speak","Stuart Warren Dansby speaking on stage",pos="50% 20%")}<figcaption>Speaker · Champion at 62</figcaption></figure>
+<div class="rv"><span class="eyebrow">Your instructor</span><h2>Stuart Warren Dansby</h2><p class="lede">Thirty years building and contributing to businesses as a commercial growth executive. A fighter who started at 48 and won a championship at 62 against a 32-year-old, and induction into the MMAM Hall of Fame in 2025.</p><p>Co-executive producer of the award-winning documentary <em>Taking the Fight</em>, selected by 26 festivals with 30+ awards.</p><p class="muted">“I am simply the conduit to deliver the message.”</p></div></div></div></section>
 
 <section class="cta" id="early-access" aria-labelledby="ea-h"><div class="wrap"><div class="split top"><div class="rv"><span class="eyebrow" style="color:#FFE3DF">Early access</span><h2 id="ea-h">Be first in line.</h2>
 <p class="price" data-price></p>
