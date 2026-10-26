@@ -1,5 +1,5 @@
 import os
-R='/workspace/stuart/repo/v2'
+import os.path as _p; R=_p.dirname(_p.dirname(_p.abspath(__file__)))
 def head(p,title,desc,path):
     return f'''<!doctype html>
 <html lang="en" class="no-js"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -139,7 +139,7 @@ corp=head(p,'Stuart Warren Dansby | Corporate Keynotes &amp; Workshops | Taking 
 <div class="actions"><a class="btn btn-dark" data-book="corp" href="mailto:info@takingthefight.com">Book a discovery call with Stuart <span class="arr" aria-hidden="true">→</span></a></div>
 <p class="cta-note">Booking for Florida teams and organizations nationwide. Prefer to send details first? Use the form.</p></div>
 <div class="panel rv" style="background:var(--cream);color:var(--char);border:0"><h3 style="margin-bottom:1.2rem">Send an inquiry</h3>
-<form class="form" data-mail="Speaking inquiry: Stuart Warren Dansby" novalidate>
+<form class="form" data-mail="Speaking inquiry: Stuart Warren Dansby" action="mailto:info@takingthefight.com" method="post" enctype="text/plain" novalidate>
 {field("name","Your name",auto="name")}{field("org","Organization",auto="organization")}{field("email","Work email","email",auto="email")}{field("phone","Phone","tel",False,auto="tel")}
 {field("format","What are you considering?",opts=["Keynote (45–60 min)","Keynote + 90-min breakout","Full course (2–3 days)","Coaching & mentoring","Not sure yet"],full=True)}
 {field("when","Event date or timeframe",req=False)}{field("size","Audience size",req=False)}
@@ -185,7 +185,7 @@ edu=head(p,'Taking the Fight for Students &amp; Schools | Stuart Warren Dansby',
 <p class="lede">Start with a short call with Stuart about your students, your calendar and what you want them to walk away with.</p>
 <div class="actions"><a class="btn btn-dark" data-book="edu" href="mailto:info@takingthefight.com">Book a call with Stuart <span class="arr" aria-hidden="true">→</span></a></div></div>
 <div class="panel rv" style="background:var(--cream);color:var(--char);border:0"><h3 style="margin-bottom:1.2rem">Tell us about your school</h3>
-<form class="form" data-mail="Education inquiry: Taking the Fight" novalidate>
+<form class="form" data-mail="Education inquiry: Taking the Fight" action="mailto:info@takingthefight.com" method="post" enctype="text/plain" novalidate>
 {field("name","Your name",auto="name")}{field("school","School or organization",auto="organization")}{field("email","Email","email",auto="email")}{field("role","Your role",req=False)}
 {field("level","Student level",opts=["High school","College / university","Career or technical program","Youth or athletics program","Other"],full=True)}
 {field("msg","What would you like students to walk away with?","area",False,True)}
@@ -237,7 +237,7 @@ course=head(p,'The Five Pillars of Taking the Fight | Online Course | Stuart War
 <div class="actions"><a class="btn btn-dark" data-checkout href="#early-access" hidden>Enroll now <span class="arr" aria-hidden="true">→</span></a></div>
 <p class="cta-note">Buying for a team or a school? Corporate and education groups get the same camp plus a weekly manager or teacher update. Note it in the form.</p></div>
 <div class="panel rv" style="background:var(--cream);color:var(--char);border:0"><h3 style="margin-bottom:1.2rem">Join the early-access list</h3>
-<form class="form" data-mail="Early access: The Five Pillars of Taking the Fight" novalidate>
+<form class="form" data-mail="Early access: The Five Pillars of Taking the Fight" action="mailto:info@takingthefight.com" method="post" enctype="text/plain" novalidate>
 {field("name","First name",auto="given-name")}{field("email","Email","email",auto="email")}
 {field("for","Who is this for?",opts=["Just me","My team or company","My school or students"],full=True)}
 {field("msg","Anything you want Stuart to know?","area",False,True,ph="Optional")}
