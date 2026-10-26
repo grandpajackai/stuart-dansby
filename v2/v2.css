@@ -247,3 +247,10 @@ figure{margin:0}section[id]{scroll-margin-top:72px}
 @media (max-width:860px){.ch-grid{grid-template-columns:1fr;gap:2.5rem}.cover{justify-self:start;max-width:min(300px,75%);transform:rotate(1.5deg)}}
 .hero h1{max-width:14ch;font-size:clamp(2.9rem,7vw,6.6rem)}.hero{padding-top:7.5rem}
 .hero h1{font-size:clamp(2.9rem,6.4vw,6rem)}.hero-meta{margin-top:2.5rem}.hero{padding-bottom:3rem}
+/* review pass 1 */
+.nav a.btn{padding:.65rem 1.25rem;color:#fff;white-space:nowrap}.nav a.btn:hover{color:#fff}
+.versus .no{color:#67635D}
+.rung .step{color:#F07A72;font-size:.78rem}
+.photo figcaption{font-size:.76rem}
+.hero-meta{font-size:.95rem;color:#CFC9C0}
+@media (max-width:860px){.hero::before{background:linear-gradient(0deg,var(--ink) 12%,rgba(14,14,14,.86) 48%,rgba(14,14,14,.15) 100%)}.nav a.btn{padding:1rem 1.25rem;justify-content:center}}

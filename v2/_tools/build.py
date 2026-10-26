@@ -12,18 +12,22 @@ def head(p,title,desc,path):
 <a class="skip" href="#main">Skip to content</a>'''
 def hdr(p,cur):
     def a(h,l,k): return f'<a href="{p}{h}"'+(' aria-current="page"' if k==cur else '')+f'>{l}</a>'
-    return f'''<header class="hdr"><div class="wrap"><a class="brand" href="{p or "./"}" aria-label="Taking the Fight home"><img src="{p}img/fist.webp" width="40" height="40" alt=""><span>Taking <b>the</b> Fight</span></a>
+    return f'''<header class="hdr"><div class="wrap"><a class="brand" href="{p or "./"}" aria-label="Taking the Fight home"><img src="{p}img/fist-sm.webp" width="40" height="40" alt=""><span>Taking <b>the</b> Fight</span></a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Open menu"><span></span></button>
 <nav class="nav" id="nav" aria-label="Main">{a("" if p else "./","Corporate","corp")}{a("education/","Students &amp; Education","edu")}{a("course/","Online Course","course")}<a class="btn btn-red btn-sm" data-book="{"edu" if cur=="edu" else "corp"}" href="mailto:info@takingthefight.com">Book a discovery call</a></nav></div></header>'''
 def ftr(p):
-    return f'''<footer class="ftr"><div class="wrap"><div><a class="brand" href="{p or "./"}"><img src="{p}img/fist.webp" width="40" height="40" alt=""><span>Taking <b>the</b> Fight</span></a><p style="margin-top:1rem;max-width:36ch">Stuart Warren Dansby. Thirty years of building people and businesses. A championship at 62. Five pillars you can use Monday morning.</p></div>
+    return f'''<footer class="ftr"><div class="wrap"><div><a class="brand" href="{p or "./"}"><img src="{p}img/fist-sm.webp" width="40" height="40" alt=""><span>Taking <b>the</b> Fight</span></a><p style="margin-top:1rem;max-width:36ch">Stuart Warren Dansby. Thirty years of building people and businesses. A championship at 62. Five pillars you can use Monday morning.</p></div>
 <div><h4>Work with Stuart</h4><ul><li><a href="{p or "./"}">Corporate speaking</a></li><li><a href="{p}education/">Students &amp; education</a></li><li><a href="{p}course/">The Five Pillars online course</a></li></ul></div>
 <div><h4>Contact</h4><ul><li><a data-email href="mailto:info@takingthefight.com">info@takingthefight.com</a></li><li><a data-book="corp" href="mailto:info@takingthefight.com">Book a discovery call</a></li><li><a href="{p}../privacy/">Privacy</a></li></ul></div>
 <div class="legal"><span>© <span id="yr">2026</span> Taking the Fight · Stuart Warren Dansby</span><span>“We all have a fight.”</span></div></div></footer>
 <dialog class="video" id="video" aria-label="Speaker reel"><button class="x" type="button">Close ✕</button><div class="frame"></div></dialog>
 <script src="{p}config.js"></script><script src="{p}v2.js" defer></script></body></html>'''
+def _wh(n):
+    from PIL import Image
+    return Image.open(R+'/img/'+n+'.webp').size
 def img(p,n,alt,cls='',lazy=True,sizes='(max-width:860px) 100vw, 50vw',pos=''):
-    return f'<img src="{p}img/{n}.webp" srcset="{p}img/{n}-sm.webp 800w, {p}img/{n}.webp 1600w" sizes="{sizes}" alt="{alt}"'+(' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"')+(f' style="object-position:{pos}"' if pos else '')+'>'
+    (sw,_),(bw,bh)=_wh(n+'-sm'),_wh(n)
+    return f'<img src="{p}img/{n}.webp" srcset="{p}img/{n}-sm.webp {sw}w, {p}img/{n}.webp {bw}w" sizes="{sizes}" width="{bw}" height="{bh}" alt="{alt}"'+(' loading="lazy" decoding="async"' if lazy else ' fetchpriority="high"')+(f' style="object-position:{pos}"' if pos else '')+'>'
 ENDORSE=[("Stuart is a passionate and driven leader with tremendous EQ, commercial acumen, and organizational agility. He's an asset and a force multiplier.","Jonathan Thompson","Chief Executive Officer, Nielsen-Massey Vanillas"),
 ("A visionary executive who builds high-performing business models, develops exceptional teams, and consistently delivers results with integrity and character.","David Stis","Chief Commercial Officer, Del Monte Foods"),
 ("One of the most passionate and motivating leaders I've ever met. Stuart consistently rallies organizations to deliver beyond expectations.","David Klavsons","Chief Executive Officer, King Juice"),
@@ -57,7 +61,7 @@ p=''
 corp=head(p,'Stuart Warren Dansby | Corporate Keynotes &amp; Workshops | Taking the Fight','Not motivational speaking. Stuart Warren Dansby brings 30 years of building people and businesses, and a championship at 62, into five practical pillars your team can use Monday morning.','')+hdr(p,'corp')+f'''
 <main id="main">
 <section class="hero"><div class="hero-media"><img src="{p}../assets/stuart-stage.webp" srcset="{p}../assets/stuart-stage-small.webp 800w, {p}../assets/stuart-stage.webp 1920w" sizes="100vw" alt="" fetchpriority="high" style="object-position:80% 30%"></div><div class="wrap">
-<span class="eyebrow">Keynotes · Workshops · Follow-through</span>
+<span class="eyebrow">Keynotes · Workshops · Follow&#8209;through</span>
 <h1>Inspiration fades by Monday. <span class="red">Behavior doesn’t.</span></h1>
 <p class="lede">Stuart Warren Dansby spent 30 years building people and businesses, then started fighting at 48 and won a championship at 62. He turns both into five practical pillars your team can put to work the next morning.</p>
 <div class="actions"><a class="btn btn-red" data-book="corp" href="#contact">Book a 20-minute discovery call <span class="arr" aria-hidden="true">→</span></a><a class="btn btn-ghost" href="https://www.youtube.com/watch?v=5sc7bOOXswY" data-video="5sc7bOOXswY" target="_blank" rel="noopener">▶ Watch the reel</a></div>
@@ -137,7 +141,7 @@ corp=head(p,'Stuart Warren Dansby | Corporate Keynotes &amp; Workshops | Taking 
 <div class="split top"><div class="rv"><span class="eyebrow" style="color:#FFE3DF">Start with a conversation</span><h2 id="cta-h">Tell Stuart what your team is up against.</h2>
 <p class="lede">Twenty minutes, directly with Stuart. No pitch deck. He’ll ask about your people, your event and the fight in front of you, and tell you honestly whether Taking the Fight is the right fit.</p>
 <div class="actions"><a class="btn btn-dark" data-book="corp" href="mailto:info@takingthefight.com">Book a discovery call with Stuart <span class="arr" aria-hidden="true">→</span></a></div>
-<p class="cta-note">Booking for Florida teams and organizations nationwide. Prefer to send details first? Use the form.</p></div>
+<p class="cta-note">Now booking Florida organizations and teams nationwide. Prefer to send details first? Use the form.</p></div>
 <div class="panel rv" style="background:var(--cream);color:var(--char);border:0"><h3 style="margin-bottom:1.2rem">Send an inquiry</h3>
 <form class="form" data-mail="Speaking inquiry: Stuart Warren Dansby" action="mailto:info@takingthefight.com" method="post" enctype="text/plain" novalidate>
 {field("name","Your name",auto="name")}{field("org","Organization",auto="organization")}{field("email","Work email","email",auto="email")}{field("phone","Phone","tel",False,auto="tel")}

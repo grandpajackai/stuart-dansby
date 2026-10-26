@@ -7,7 +7,7 @@
   onScroll(); window.addEventListener('scroll', onScroll, {passive:true});
   function closeMenu(){ hdr.classList.remove('open'); btn.setAttribute('aria-expanded','false'); btn.setAttribute('aria-label','Open menu'); }
   if (btn) {
-    btn.addEventListener('click', function(){ var o = !hdr.classList.contains('open'); hdr.classList.toggle('open', o); btn.setAttribute('aria-expanded', String(o)); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); if (o) { var f = nav.querySelector('a'); f && f.focus(); } });
+    btn.addEventListener('click', function(){ var o = !hdr.classList.contains('open'); hdr.classList.toggle('open', o); btn.setAttribute('aria-expanded', String(o)); btn.setAttribute('aria-label', o ? 'Close menu' : 'Open menu'); if (o) { var f = nav.querySelector('a'); setTimeout(function(){ f && f.focus(); }, 60); } });
     nav.addEventListener('click', function(e){ if (e.target.closest('a')) closeMenu(); });
     d.addEventListener('keydown', function(e){ if (e.key === 'Escape' && hdr.classList.contains('open')) { closeMenu(); btn.focus(); } });
     window.addEventListener('resize', function(){ if (window.innerWidth > 860) closeMenu(); });
